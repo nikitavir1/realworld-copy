@@ -3,7 +3,7 @@ import {setItem} from '@/helpers/resistanceStorage'
 
 const state = {
   isSubmitting: false,
-  currentUse: null,
+  currentUser: null,
   validationErrors: null,
   isLoggedIn: null
 }
@@ -30,7 +30,7 @@ const mutations = {
   },
   [mutationTypes.registerSuccess](state, payload) {
     state.isSubmitting = false
-    state.currentUse = payload
+    state.currentUser = payload
     console.log('new paylosds', payload)
     state.isLoggedIn = true
   },
@@ -45,7 +45,7 @@ const mutations = {
   },
   [mutationTypes.loginSuccess](state, payload) {
     state.isSubmitting = false
-    state.currentUse = payload
+    state.currentUser = payload
     state.isLoggedIn = true
   },
   [mutationTypes.loginFailure](state, payload) {
