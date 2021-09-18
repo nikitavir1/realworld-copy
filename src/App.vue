@@ -1,8 +1,95 @@
 <template>
   <div>
-    Some project
+    <nav class="navbar navbar-light">
+      <div class="container">
+        <a
+          class="navbar-brand ng-binding"
+          ui-sref="app.home"
+          ng-bind="::$ctrl.appName | lowercase"
+          href="#/"
+          >conduit</a
+        >
+
+        <!-- Show this for logged out users -->
+        <ul
+          show-authed="false"
+          class="nav navbar-nav pull-xs-right"
+          style="display: inherit;"
+        >
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="app.home">
+              <router-link :to="{name: 'home'}">Home</router-link>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="app.login">
+              <router-link :to="{name: 'login'}">Sign in</router-link>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="app.register">
+              <router-link :to="{name: 'register'}">Sign up</router-link>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Show this for logged in users -->
+        <ul
+          show-authed="true"
+          class="nav navbar-nav pull-xs-right"
+          style="display: none;"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              ui-sref-active="active"
+              ui-sref="app.home"
+              href="#/"
+            >
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              ui-sref-active="active"
+              ui-sref="app.editor"
+              href="#/editor/"
+            >
+              <i class="ion-compose"></i>&nbsp;New Article
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              ui-sref-active="active"
+              ui-sref="app.settings"
+              href="#/settings"
+            >
+              <i class="ion-gear-a"></i>&nbsp;Settings
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link ng-binding"
+              ui-sref-active="active"
+              ui-sref="app.profile.main({ username: $ctrl.currentUser.username })"
+              href="#/@"
+            >
+              <img class="user-pic" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Some project -->
 
     <router-view></router-view>
   </div>
 </template>
-
