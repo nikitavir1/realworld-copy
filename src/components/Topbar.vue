@@ -47,7 +47,7 @@
               class="nav-link"
               :to="{name: 'userProfile', params {slug: currentUser.username}}"
             > -->
-              <!-- <img class="user-pic" :src="currenUser.image" /> -->
+              <img class="user-pic" :src="currentUser.image" />
               &nbsp;
               {{ currentUser.username }}
             </router-link>
@@ -91,19 +91,6 @@ export default {
       isLoggedIn: getterTypes.isLoggedIn,
       isAnonymous: getterTypes.isAnonymous
     })
-    // ...mapState({
-    //   currentUser: state => state.auth.currentUser,
-    //   isLoggedIn: state => state.auth.isLoggedIn
-    // }),
-    // currentUser() {
-    //   return this.$store.getters[getterTypes.currentUser]
-    // },
-    // isLoggedIn() {
-    //   return this.$store.getters[getterTypes.isLoggedIn]
-    // },
-    // isAnonymous() {
-    //   return this.$store.getters[getterTypes.isAnonymous]
-    // }
   }
 }
 </script>
