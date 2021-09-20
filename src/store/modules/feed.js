@@ -20,13 +20,16 @@ const mutations = {
   [mutationTypes.getFeedStart](state) {
     state.isLoading = true
     state.data = null
+    console.log('start')
   },
   [mutationTypes.getFeedSuccess](state, payload) {
     state.isLoading = false
     state.data = payload
+    console.log('success')
   },
   [mutationTypes.getFeedFailur](state) {
     state.isLoading = false
+    console.log('failur')
   }
 }
 

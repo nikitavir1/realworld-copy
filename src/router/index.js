@@ -5,11 +5,6 @@ import Login from '@/views/Login'
 
 const routes = [
   {
-    path: '/',
-    name: 'globalFeed',
-    component: GLobalFeed
-  },
-  {
     path: '/login',
     name: 'login',
     component: Login
@@ -18,6 +13,51 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path: '/',
+    name: 'globalFeed',
+    component: GLobalFeed
+  },
+  {
+    path: '/feed',
+    name: 'yourFeed',
+    component: GLobalFeed
+  },
+  {
+    path: '/tags/:slug',
+    name: 'tag',
+    component: GLobalFeed
+  },
+  {
+    path: '/aticles/new',
+    name: 'createArticle',
+    component: GLobalFeed
+  },
+  {
+    path: '/aticles/:slug',
+    name: 'article',
+    component: GLobalFeed
+  },
+  {
+    path: '/aticles/:slug/edit',
+    name: 'editArticle',
+    component: GLobalFeed
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: GLobalFeed
+  },
+  {
+    path: '/profile/:slug',
+    name: 'userProfile',
+    component: GLobalFeed
+  },
+  {
+    path: '/profile/:slug/favorites',
+    name: 'userProfileFavorite',
+    component: GLobalFeed
   }
 ]
 
