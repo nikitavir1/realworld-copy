@@ -3,10 +3,10 @@
     <mcv-loading v-if="isLoading" />
     <mcv-error-message v-if="error" />
 
-    <div class="sidebar" v-if="popularTas">
+    <div class="sidebar" v-if="popularTags">
       <p>Popular Tags</p>
       <router-link
-        v-for="popularTag in popularTas"
+        v-for="popularTag in popularTags"
         :key="popularTag"
         :to="{name: 'tag', params: {slug: popularTag}}"
         class="tag-default tag-pill"
