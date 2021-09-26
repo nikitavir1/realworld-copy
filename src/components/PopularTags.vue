@@ -3,10 +3,10 @@
     <mcv-loading v-if="isLoading" />
     <mcv-error-message v-if="error" />
 
-    <div class="sidebar" v-if="popularTags">
+    <div class="sidebar" v-if="popularTas">
       <p>Popular Tags</p>
       <router-link
-        v-for="popularTag in popularTags"
+        v-for="popularTag in popularTas"
         :key="popularTag"
         :to="{name: 'tag', params: {slug: popularTag}}"
         class="tag-default tag-pill"
@@ -34,10 +34,18 @@ export default {
       isLoading: state => state.popularTags.isLoading,
       error: state => state.popularTags.error,
       popularTags: state => state.popularTags.data
-    })
+    }),
+    fakeTags() {
+      return ['coffee', 'dragon', 'cartoon']
+    }
   },
   mounted() {
     this.$store.dispatch(actionTypes.getPopularTags)
+  },
+  methods: {
+    onClick() {
+      this.$store.dispatch(actionTypes.getPopularTags)
+    }
   }
 }
 </script>

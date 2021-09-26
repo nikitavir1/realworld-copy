@@ -2,7 +2,7 @@
   <div class="auth-page ng-scope">
     <div class="contaier page">
       <div class="row">
-        <div class="col-md-6 offset-md-3 col-xs-12">
+        <div class="col-md-4 offset-md-4 col-xs-12">
           <h1 class="text-xs-center">Sign Up</h1>
           <p class="text-xs-center">
             <router-link :to="{name: 'login'}">Have an account?</router-link>
@@ -85,7 +85,7 @@ export default {
         })
         .then(user => {
           console.log('successfully register user', user)
-          this.$router.push({name: 'MvcGlobalFeed'})
+          this.$router.push({name: 'globalFeed'})
         })
     }
   }

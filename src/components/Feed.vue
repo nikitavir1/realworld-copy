@@ -14,7 +14,10 @@
           <router-link
             :to="{name: 'userProfile', params: {slug: article.author.username}}"
           >
-            <img :src="article.author.image" />
+            <!-- <img :src="article.author.image" /> -->
+            <img
+              src="https://static.productionready.io/images/smiley-cyrus.jpg"
+            />
           </router-link>
           <div class="info">
             <router-link
@@ -99,6 +102,10 @@ export default {
   watch: {
     currentPage() {
       console.log('currentPage changes')
+      this.fetchFeed()
+    },
+    apiUrl() {
+      console.log('new URL')
       this.fetchFeed()
     }
   },

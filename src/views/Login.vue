@@ -2,7 +2,7 @@
   <div class="auth-page ng-scope">
     <div class="contaier page">
       <div class="row">
-        <div class="col-md-6 offset-md-3 col-xs-12">
+        <div class="col-md-4 offset-md-4 col-xs-12">
           <h1 class="text-xs-center">Sign In</h1>
           <p class="text-xs-center">
             <router-link :to="{name: 'register'}">Need an account?</router-link>
@@ -80,7 +80,7 @@ export default {
           password: this.password
         })
         .then(() => {
-          this.$router.push({name: 'MvcGlobalFeed'})
+          this.$router.push({name: 'globalFeed'})
         })
     }
   }
